@@ -1,0 +1,177 @@
+_*DataBase Project 2 (DMart)*_ 
+
+CREATE TABLE P_Import_section(
+ P_Id VARCHAR(255) PRIMARY KEY UNIQUE,
+ P_name VARCHAR(255),
+ Imported_from VARCHAR(255),
+ Market_price INT,
+ Manufacture_Date DATE,
+ Expiry_Date DATE
+);
+
+SELECT * FROM P_Import_section;
+
+INSERT INTO P_Import_section
+VALUES 
+   ('P001', 'Rice', 'Kerla', 6999, '2026-05-01', '2027-05-01'),
+   ('P002', 'Wheat', 'Panjab', 8999, '2026-04-01', '2027-04-01'),   
+   ('P003', 'Jawar', 'Maharashtra', 9999, '2026-05-01', '2027-05-01'),   
+   ('P004', 'Chocolate', 'Karnataka', 99, '2026-05-01', '2027-05-01'),   
+   ('P005', 'Tea Powder', 'Assam', 59, '2026-05-01', '2027-05-01'),   
+   ('P006', 'Cold Drinks', 'Delhi', 799, '2026-05-01', '2027-05-01'),   
+   ('P007', 'T-Shirts', 'Gujrat', 399, '2026-05-01', '2027-05-01'),   
+   ('P008', 'Pants', 'Hydrabad', 799, '2026-05-01', '2027-05-01'),   
+   ('P009', 'Shirts', 'Ladhak', 499, '2026-05-01', '2027-05-01'),   
+   ('P010', 'Shoes', 'Arunachal Pradesh', 999, '2026-05-01', '2027-05-01'),   
+   ('P011', 'Blanets', 'Madhya Pradesh', 899, '2026-05-01', '2027-05-01'),   
+   ('P012', 'Bulb', 'Andhra Pradesh', 299, '2026-05-01', '2027-05-01'),   
+   ('P013', 'Monitor', 'Benguluru', 4599, '2026-05-01', '2027-05-01'),   
+   ('P014', 'Mouse', 'Sikim', 699, '2026-05-01', '2027-05-01'),   
+   ('P015', 'CPU', 'Manipur', 8999, '2026-05-01', '2027-05-01'),   
+   ('P016', 'Wrist-Watch', 'Jaipur', 7999, '2026-05-01', '2027-05-01'),   
+   ('P017', 'Celing Fan', 'Raipur', 2999, '2026-05-01', '2027-05-01'),   
+   ('P018', 'T.V.', 'Kanyakumari', 6999, '2026-05-01', '2027-05-01'),   
+   ('P019', 'Books', 'Kerla', 99, '2026-05-01', '2027-05-01'),   
+   ('P020', 'Paintings', 'Kerla', 99, '2026-05-01', '2027-05-01');
+---------------------------------------------------------------------------------------------------------
+
+CREATE TABLE Employee(
+ Emp_Id STRING PRIMARY KEY UNIQUE,
+ Emp_name VARCHAR(255),
+ Age INT,
+ DOB DATE,
+ Joining_Date DATE,
+ Dept VARCHAR(255)
+);
+
+SELECT * FROM Employee;
+
+INSERT INTO Employee
+VALUES 
+   ('E001', 'Ashok', 18, '2008-11-05', '2026-05-01', 'Sales'),
+   ('E002', 'Mina', 19, '2007-10-29', '2026-05-01', 'Logistic'),   
+   ('E003', 'Shila', 20, '2006-01-31', '2026-05-01', 'Dairy'),   
+   ('E004', 'Golu', 21, '2005-05-04', '2026-05-01', 'Home & Personal Care'),   
+   ('E005', 'Tappu', 22, '2008-02-28', '2026-05-01', 'Apparel'),   
+   ('E006', 'Ganu', 23, '2003-03-07', '2026-05-01', 'Kitchenware'),   
+   ('E007', 'Shree', 24, '2002-09-06', '2026-05-01', 'Toys & Games'),   
+   ('E008', 'Akash', 25, '2001-08-08', '2026-05-01', 'Sales'),   
+   ('E009', 'Amol', 18, '2008-12-21', '2026-05-01', 'Sales'),   
+   ('E010', 'Dipak', 19, '2007-11-29', '2026-05-01', 'Kitchenware'),   
+   ('E011', 'Deep', 20, '2006-10-05', '2026-05-01', 'Dairy'),   
+   ('E012', 'Pratik', 30, '1996-09-05', '2026-05-01', 'Sales'),   
+   ('E013', 'Ashok', 18, '2008-06-05', '2026-05-01', 'Toys & Games'),   
+   ('E014', 'Farhan', 18, '2008-07-21', '2026-05-01', 'Logistic'),   
+   ('E015', 'Kekti', 19, '2007-11-24', '2026-05-01', 'Apparel'),   
+   ('E016', 'Kirti', 18, '2008-05-30', '2026-05-01', ' Home & Personal Care'),   
+   ('E017', 'Shyam', 24, '2002-11-19', '2026-05-01', 'Sales'),   
+   ('E018', 'Tukaram', 25, '2001-11-11', '2026-05-01', 'Sales'),   
+   ('E019', 'Tejas', 18, '2008-10-04', '2026-05-01', 'Grains'),   
+   ('E020', 'Shahu', 18, '2008-04-04', '2026-05-01', 'flour');
+   
+---------------------------------------------------------------------------------------------------------
+ 
+ 
+ CREATE TABLE Management_Staff(
+  Degination VARCHAR(255),
+  Staff_Id STRING PRIMARY KEY,
+  Name VARCHAR(255),
+  Salary INT,
+  Dept VARCHAR(255)
+ );
+ 
+SELECT * FROM Management_Staff;
+
+INSERT INTO Management_Staff 
+VALUES 
+  ('CEO', '001', 'Ashitosh', 45000, 'Apparel'),
+  ('COO', '002', 'Shalini', 55000, 'Dairy'),  
+  ('CFO', '003', 'Minakshi', 40000, 'Apparel'),
+  ('HR', '004', 'Kalu', 35000, 'Toys & Games'),
+  ('ASM', '005', 'Nikita', 25000, 'Kitchenware'),
+  ('CEO', '006', 'Saurabh', 15000, 'Sales'),
+  ('COO', '007', 'Shailesh', 85000, 'Logistic'),
+  ('CFO', '008', 'Savita', 36000, 'Grains'),
+  ('HR', '009', 'Nikant', 94000, 'Kitchenware'),
+  ('ASM', '010', 'Hira', 47000, 'Toys & Games'),
+  ('CEO', '011', 'Sheru', 84000, 'Apparel'),
+  ('COO', '012', 'Paresh', 45000, 'Apparel'),
+  ('CFO', '013', 'Paras', 25000, 'Sales'),
+  ('HR', '014', 'Chetan', 45000, 'Apparel'),
+  ('ASM', '015', 'Nitin', 45000, 'Logistic'),
+  ('CEO', '016', 'Vaibhav', 55000, 'Kitchenware'),
+  ('COO', '017', 'Dipika', 47000, 'Toys & Games'),
+  ('CFO', '018', 'Ranveer', 36000, 'Logistic'),
+  ('HR', '019', 'Anuj', 47000, 'Sales'),
+  ('ASM', '020', 'Santosh', 84000, 'Toys & Games');
+  
+---------------------------------------------------------------------------------------------------------
+
+CREATE TABLE Customer(
+ Customer_Id STRING UNIQUE PRIMARY KEY,
+ Name VARCHAR(255),
+ Phone_No STRING UNIQUE,
+ Address VARCHAR(255),
+ MemberShip_Points VARCHAR(255)
+);
+
+
+SELECT * FROM Customer;
+
+INSERT INTO Customer
+VALUES
+  ('C001', 'Qutubudin Eibak', 93598687, 'Delhi', '***'),
+  ('C002', 'Babar', 93459875, 'Lahor', '****'),  
+  ('C003', 'Humayu', 98976487, 'Fatehpur', '*****'),
+  ('C004', 'Akbar', 95879843, 'Sikandrabad', '**'),
+  ('C005', 'Jahangir', 97341650, 'Delhi', '*'),
+  ('C006', 'Shanjahn', 94378989, 'Daulatabad', '***'),
+  ('C007', 'Sher Shaha', 94544730, 'Turki', '**'),
+  ('C008', 'Aurangjeb', 93665799, 'Ilahabad', '*****'),
+  ('C009', 'Iltutumish', 93565689, 'Kolktta', '***'),
+  ('C010', 'Rajiya', 93554673, 'Delhi', '****'),
+  ('C011', 'Firoj Shaha Abdali', 96555685, 'Rajyastan', '***'),
+  ('C012', 'Mohmad Gajnavi', 93656396, 'Delhi', '****'),
+  ('C013', 'Bahadur Shaha Jafar', 93567848, 'Fatehpur', '**'),
+  ('C014', 'Abraham Lodi', 94466887, 'Ilahabad', '*****'),
+  ('C015', 'Sikandar Lodi', 93557844, 'Turki', '****'),
+  ('C016', 'Azam Shah', 93324010, 'Rajyastan', '***'),
+  ('C017', 'Farrukhsiyar', 93565647, 'Delhi', '**'),
+  ('C018', 'Ahmad Shah Bahadur', 93626530, 'Daulatabad', '***'),
+  ('C019', 'Alamgir II', 93336446, 'Lahor', '*'),
+  ('C020', 'Nasir Khusrau', 93568475, 'Kolktta', '****');
+  
+---------------------------------------------------------------------------------------------------------
+
+CREATE TABLE Orders(
+ order_id STRING UNIQUE PRIMARY KEY,
+ customer_id STRING UNIQUE,
+ emp_id STRING UNIQUE,
+ Total_Amount INT,
+ Sold_Date DATE
+);
+
+SELECT * FROM Orders;
+
+INSERT INTO Orders
+VALUES
+  ('Order001', 'C001', 'E001', 19999, '06-05-2026'),
+  ('Order002', 'C002', 'E002', 29999, '01-04-2026'),  
+  ('Order003', 'C003', 'E003', 39999, '31-03-2026'),
+  ('Order004', 'C004', 'E004', 49999, '30-05-2026'),
+  ('Order005', 'C005', 'E005', 59999, '29-01-2026'),
+  ('Order006', 'C006', 'E006', 69999, '02-01-2026'),
+  ('Order007', 'C007', 'E007', 19999, '18-12-2026'),
+  ('Order008', 'C008', 'E008', 79999, '16-11-2026'),
+  ('Order009', 'C009', 'E009', 89999, '13-11-2026'),
+  ('Order010', 'C010', 'E010', 99999, '20-11-2026'),
+  ('Order011', 'C011', 'E011', 1999, '19-10-2026'),
+  ('Order012', 'C012', 'E012', 199, '11-10-2026'),
+  ('Order013', 'C013', 'E013', 19, '10-10-2026'),
+  ('Order014', 'C014', 'E014', 9, '13-09-2026'),
+  ('Order015', 'C015', 'E015', 299, '05-09-2026'),
+  ('Order016', 'C016', 'E016', 399, '15-09-2026'),
+  ('Order017', 'C017', 'E017', 499, '16-08-2026'),
+  ('Order018', 'C018', 'E018', 599, '08-08-2026'),
+  ('Order019', 'C019', 'E019', 699, '21-08-2026'),
+  ('Order020', 'C020', 'E020', 799, '22-08-2026');

@@ -1,0 +1,231 @@
+_*DataBase Project 1 (College)*_
+
+CREATE TABLE College(
+ name VARCHAR(255) UNIQUE PRIMARY KEY,
+ CollegeCode STRING UNIQUE,
+ Address VARCHAR(255),
+ Board VARCHAR(255),
+ NoOfClass INT
+);
+
+SELECT * FROM College;
+
+INSERT INTO College
+VALUES
+  ('Airoli Madhyamik Vidyalay', 'AMVA01', 'Airoli', 'State Board', 120),
+  ('Government College of Engineering, Amravati', 'GCE02', 'Amravati', 'State Board', 150),  
+  ('Hi-Tech Institute of Technology, Aurangabad', 'HIT03', 'Aurangabad', 'CBSC', 250),
+  ('Aditya Engineering College , Beed', 'AEC04', 'Beed', 'CBSC', 120),
+  ('Sant Eknath College of Engineering', 'SECE05', 'Nagpur', 'ICSC', 320),
+  ('Veermata Jijabai Technological Institute(VJTI), Matunga, Mumbai', 'VJTI06', 'Matunga', 'ICSC', 220),
+  ('Sardar Patel College of Engineering, Andheri', 'SPCE07', 'Andheri', 'State Board', 100),
+  ('Thadomal Shahani Engineering College, Bandra, Mumbai', 'TSEC08', 'Bandra', 'State Board', 500),
+  ('Anjuman-I-Islam M.H. Saboo Siddik College of Engineering, Byculla, Mumbai', 'AIISSC09', 'Byculla', 'State Board', 120),
+  ('N.Y.S.S. Datta Meghe College of Engineering, Airoli, Navi Mumbai', 'DMCE010', 'Airoli', 'ICSC', 180),
+  ('Vasantdada Patil Pratishthan College Of Engineering and Visual Arts, Sion, Mumbai', 'VPPCEV011', 'Sion', 'State Board', 560),
+  ('Terna Engineering College, Nerul, Navi Mumbai', 'TEC012', 'Nerul', 'CBSC', 230),
+  ('K J Somaiya Institute of Technology', 'KJSIT013', 'Vidyavihar', 'State Board', 560),
+  ('S.I.E.S. Graduate School of Technology, Nerul, Navi Mumbai', 'SIES014', 'Nerul', 'CBSC', 70),
+  ('Bhartiya Vidya Bhavan Sardar Patel Institute of Technology , Andheri, Mumbai', 'BVBSPIT015', 'Andheri', 'State Board', 600),
+  ('Universal College of Engineering,Kaman Dist. Palghar', 'UCEK016', 'Palghar', 'ICSC', 120),
+  ('VPM Maharshi Parshuram College of Engineering, Velneshwar, Ratnagiri.', 'VPMMPCE017', 'Velneshwar', 'State Board', 450),
+  ('A. P. Shah Institute of Technology, Thane', 'APSIT018', 'Thane', 'ICSC', 90),
+  ('Bapurao Deshmukh College of Engineering, Sevagram', 'BDCE019', 'Sevagram', 'CBSC', 30),
+  ('Guru Nanak Institute of Engineering & Technology,Kalmeshwar, Nagpur', 'GNIET020', 'Kalmeshwar', 'CBSC', 120);
+  
+--1 (UPDATE Value/Data)--
+--UPDATE College 
+--SET noofclass = 600 
+--WHERE collegecode = 'AMVA01';
+
+--2 (Rename Col name)--
+--ALTER TABLE College 
+--RENAME COLUMN 'name' to 'College Name';
+
+--3 (Rename Table name)--
+--Alter TABLE College 
+--RENAME to College_Info; 
+
+--4 (Add Col)--
+--ALTER TABLE College
+--add COLUMN Floor STRING;
+
+--5 (Drop a Col)--
+--ALTER TABLE College
+--DROP COLUMN floor;
+
+--SELECT * FROM College_Info;
+
+--6 (Drop Table from DB)--
+--DROP TABLE College_Info;
+
+--7 (ORDER BY)--
+--SELECT address, board 
+--FROM College 
+--ORDER By collegecode ASC;
+
+--8 (Group BY)--
+--SELECT address,name, MAX(noofclass)
+--AS Big_College
+--FROM College
+--GROUP BY collegecode
+--ORDER BY noofclass  ASC;
+
+--------------------------------------------------------------------------------------------------------------------------------------
+
+CREATE TABLE ClassRoom(
+ Standard STRING,
+ Division STRING,
+ ClassTeacher VARCHAR(255),
+ NoOfStd INT,
+ ClassNo INT,
+ Floor STRING
+);
+
+SELECT * from ClassRoom;
+
+--ALTER TABLE ClassRoom
+--DROP COLUMN floor;
+
+--ALTER TABLE ClassRoom
+--ADD COLUMN Floor STRING;
+
+--Drop TABLE ClassRoom;
+
+INSERT INTO ClassRoom
+VALUES
+  ('1st', 'A', 'Salunkhe Maam', 50, 101, '1st Floor'),
+  ('1st', 'B', 'SHree Maam', 60, 102, '1st Floor'), 
+  ('2nd', 'A', 'Dhage Maam', 40, 201, '2nd Floor'),
+  ('2nd', 'B', 'Kiran Maam', 30, 202, '2nd Floor'),
+  ('3rd', 'A', 'Hira Maam', 80, 301, '3rd Floor'),
+  ('3rd', 'B', 'Shreya Maam', 60, 302, '3rd Floor'),
+  ('4th', 'A', 'Vaishavi Maam', 50, 401, '4th Floor'),
+  ('4th', 'B', 'Reena Maam', 70, 402, '4th Floor'),
+  ('5th', 'A', 'Solaskar Sir', 100, 501, '5th Floor'),
+  ('5th', 'B', 'Bidhe Sir', 45, 502, '5th Floor'),
+  ('6th', 'A', 'Bhakle Sir', 35, 601, '6th Floor'),
+  ('6th', 'B', 'Pansare Sir', 50, 602, '6th Floor'),
+  ('7th', 'A', 'Harvalkar Sir', 50, 701, '7th Floor'),
+  ('7th', 'B', 'Chauvan Sir', 120, 702, '7th Floor'),
+  ('8th', 'A', 'Sharma Sir', 50, 801, '8th Floor'),
+  ('8th', 'B', 'Khade Sir', 80, 802, '8th Floor'),
+  ('9th', 'A', 'Gighe Sir', 90, 901, '9th Floor'),
+  ('9th', 'B', 'Ghodke Sir', 100, 902, '9th Floor'),
+  ('10th', 'A', 'Shelar Sir', 140, 1001, '10th Floor'),
+  ('10th', 'B', 'Vaibhav', 160, 1002, '10th Floor');
+  
+--------------------------------------------------------------------------------------------------------------------------------------
+
+CREATE TABLE Student(
+ Name VARCHAR(255),
+ Student_id STRING PRIMARY KEY UNIQUE,
+ standard STRING,
+ division VARCHAR(255),
+ RollNo INT UNIQUE,
+ Age INT
+);
+
+SELECT * FROM Student;
+
+INSERT INTO Student
+VALUES
+ ('Aniket', '2026001', '10th', 'A', 001, 15),
+ ('Tejas', '2026002', '10th', 'A', 002, 14), 
+ ('Bhavesh', '2026003', '10th', 'A', 003, 17),
+ ('Aayush', '2026004', '10th', 'A', 004, 14),
+ ('Aditya', '2026005', '10th', 'A', 005, 16),
+ ('Kunal', '2026006', '10th', 'A', 006, 15),
+ ('Abhishek', '2026007', '10th', 'A', 007, 14),
+ ('Shreyash', '2026008', '10th', 'A', 008, 17),
+ ('Digambar', '2026009', '10th', 'A', 009, 16),
+ ('Dipraj', '2026010', '10th', 'A', 010, 15),
+ ('Shubham', '2026011', '10th', 'A', 011, 14),
+ ('Om', '2026012', '10th', 'A', 012, 16),
+ ('Avishakar', '2026013', '10th', 'A', 013, 15),
+ ('Aaftab', '2026014', '10th', 'A', 014, 17),
+ ('Pratik', '2026015', '10th', 'A', 015, 14),
+ ('Sannket', '2026016', '10th', 'A', 016, 16),
+ ('Omkar', '2026017', '10th', 'A', 017, 15),
+ ('Karande', '2026018', '10th', 'A', 018, 16),
+ ('Ajinkya', '2026019', '10th', 'A', 019, 15),
+ ('Aashu', '2026020', '10th', 'A', 020, 14);
+ 
+ 
+UPDATE Student
+set name = 'Sanket'
+where student_id = '2026016';
+
+--------------------------------------------------------------------------------------------------------------------------------------
+
+
+CREATE TABLE Result(
+ Student_Name VARCHAR(255),
+ student_id STRING PRIMARY KEY UNIQUE,
+ Result VARCHAR(255),
+ Percentage FLOAT,
+ Class STRING
+);
+
+SELECT * FROM Result;
+
+--DROP TABLE Result;
+
+INSERT INTO Result
+VALUES 
+  ('Aniket', '2026001', 'PASS', 90.1, '1st Class'),
+  ('Tejas', '2026002', 'PASS', 92.2, '1st Class'),  
+  ('Bhavesh', '2026003', 'PASS', 93.3, '1st Class'),
+  ('Aayush', '2026004', 'PASS', 94.4, '1st Class'),
+  ('Aditya', '2026005', 'PASS', 90.2, '1st Class'),
+  ('Kunal', '2026006', 'PASS', 90.2, '1st Class'),
+  ('Abhishek', '2026007', 'PASS', 92.3, '1st Class'),
+  ('Shreyash', '2026008', 'PASS', 92.4, '1st Class'),
+  ('Digambar', '2026009', 'PASS', 90.1, '1st Class'),
+  ('Dipraj', '2026010', 'PASS', 95.0, '1st Class'),
+  ('Shubham', '2026011', 'PASS', 96.1, '1st Class'),
+  ('Om', '2026012', 'PASS', 90, '1st Class'),
+  ('Avishakar', '2026013', 'PASS', 91.9, '1st Class'),
+  ('Aaftab', '2026014', 'PASS', 95.0, '1st Class'),
+  ('Pratik', '2026015', 'PASS', 90.1, '1st Class'),
+  ('Sanket', '2026016', 'PASS', 90.0, '1st Class'),
+  ('Omkar', '2026017', 'PASS', 90.1, '1st Class'),
+  ('Karande', '2026018', 'PASS', 94.1, '1st Class'),
+  ('Ajinkya', '2026019', 'PASS', 94.1, '1st Class'),
+  ('Aashu', '2026020', 'PASS', 98.9, '1st Class');
+  
+--SELECT student_name, student_id, MAX(percentage) from Result;
+--------------------------------------------------------------------------------------------------------------------------------------
+
+CREATE TABLE Addmission(
+  student_name VARCHAR(255),
+  student_id STRING PRIMARY KEY UNIQUE,
+  Stream STRING,
+  College_Name VARCHAR(255),
+  Address VARCHAR(255)
+);
+
+SELECT * FROM Addmission;
+
+INSERT INTO Addmission
+VALUES
+  ('Aniket', '2026001', 'Science', 'B.N Bandondkar', 'Thane'),
+  ('Tejas', '2026002', 'Arts', 'Satish Pradhan Dnyanasadhana College Thane', 'Thane'),  
+  ('Bhavesh', '2026003', 'Diploma', 'Sensex', 'Airoli'),
+  ('Aayush', '2026004', 'Commerce', 'Satish Pradhan Dnyanasadhana College Thane', 'Thane'),
+  ('Aditya', '2026005', 'Science', 'I.C.L.E.S', 'Vashi'),
+  ('Kunal', '2026006', 'Science', 'Rayat Shikshan Sansthas Karmaveer Bhaurao Patil College Vashi', 'Vashi'),
+  ('Abhishek', '2026007', 'Commerce', 'Keraleeya Samajam (Regd.) Dombivlis Model College', 'Dombivli'),
+  ('Shreyash', '2026008', 'Arts', 'Elphinstone Technical College', 'Panvel'),
+  ('Digambar', '2026009', 'Science', 'Rayat Shikshan Sansthas Karmaveer Bhaurao Patil College Vashi', 'Vashi'),
+  ('Dipraj', '2026010', 'Science', 'B.N Bandondkar', 'Thane'),
+  ('Shubham', '2026011', 'Science', 'V.K Krishna Menon College', 'Bhandup'),
+  ('Om', '2026012', 'Science', 'I.C.L.E.S', 'Vashi'),
+  ('Avishakar', '2026013', 'Commerce', 'J. K. College of Science & Commerce', 'Ghansoli'),
+  ('Aaftab', '2026014', 'Science', 'B.N Bandondkar', 'Thane'),
+  ('Pratik', '2026015', 'Science', 'VG Vaze College of Arts, Science and Commerce', 'Mulund'),
+  ('Sanket', '2026016', 'Science', 'I.C.L.E.S', 'Vashi'),
+  ('Omkar', '2026017', 'Science', 'VPMs College Mehta', 'Airoli'),
+  ('Karande', '2026018', 'Science', 'B.N Bandondkar', 'Thane'),
+  ('Ajinkya', '2026019', 'Science', 'B.N Bandondkar', 'Thane'),
+  ('Aashu', '2026020', 'Science', 'Rayat Shikshan Sansthas Karmaveer Bhaurao Patil College Vashi', 'Vashi');
